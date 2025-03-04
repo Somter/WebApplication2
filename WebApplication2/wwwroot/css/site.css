@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+   
+}
+
+.film-card {
+    transition: transform 0.2s ease-in-out;
+    width: 580px;
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+    .film-card:hover {
+        transform: scale(1.02);
+    }
+
+.poster-frame {
+    width: 300px;
+    height: 533px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .poster-frame img {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+.text-center{
+    color:white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Лучшие фильмы";
+}
+<h1 class="text-center">@ViewData["Title"]</h1>
+
+<div class="container mt-2">
+    <div class="row">
+        @foreach (var movie in ViewBag.Movies)
+        {
+            <div class="col-md-12 mb-4">
+                <div class="card film-card">
+                    <div class="row g-0">
+                        <div class="col-auto poster-frame">
+                            <img src="@movie.Poster" alt="Poster of @movie.Name">
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h5 class="card-title">@movie.Name (@movie.Year)</h5>
+                                <p class="card-text"><strong>Режиссёр:</strong> @movie.Director</p>
+                                <p class="card-text"><strong>Жанр:</strong> @movie.Genre</p>
+                                <p class="card-text">@movie.Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
