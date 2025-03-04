@@ -6,7 +6,7 @@ body {
 }
 
 .film-card {
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;  
     width: 580px;
     padding: 0px;
     border-radius: 10px;
