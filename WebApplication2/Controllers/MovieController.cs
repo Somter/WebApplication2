@@ -13,8 +13,8 @@ namespace WebApplication2.Controllers
 
         public async Task<IActionResult> Index() 
         {
-            IEnumerable<Movie> movies = await Task.Run(() => db.Movies);
-            ViewBag.Movies = movies;    
+            IEnumerable<Movie> movies = await Task.Run(() => db.Movies);    
+            ViewBag.Movies = movies;        
             return View();
         }
 
