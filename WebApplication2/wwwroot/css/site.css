@@ -1,42 +1,67 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #121212;
-   
+    background-color: #2b2d31; 
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
 }
 
 .film-card {
-    transition: transform 0.2s ease-in-out;  
-    width: 580px;
-    padding: 0px;
+    transition: transform 0.2s ease-in-out;
+    width: 300px; /* Ограничиваем ширину карточки */
     border-radius: 10px;
+    background-color: #313338;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #1e1f22;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое */
 }
 
     .film-card:hover {
         transform: scale(1.02);
     }
 
+
 .poster-frame {
-    width: 300px;
-    height: 533px;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    width: 100%;
+    height: 400px; /* Фиксированная высота для всех постеров */
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #232428;
+    overflow: hidden; /* Обрезаем лишнее, если изображение выходит за рамки */
 }
 
     .poster-frame img {
-        margin: 0;
-        padding: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: cover; /* Обрезает изображение, сохраняя пропорции */
     }
-.text-center{
-    color:white;
-    margin-top: 30px;
-    margin-bottom: 30px;
+
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-text {
+    color: #b5bac1;
+    font-size: 0.9rem; 
+}
+
+strong {
+    color: #7289da; 
 }
