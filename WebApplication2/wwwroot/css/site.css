@@ -1,3 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.main {
+    width: 100px; 
+    height: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #5865F2; 
+    cursor: pointer;
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin: 10px auto; 
+}
+    .back-details a,
+    .main a {
+        position: relative;
+        text-decoration: none;
+        color: #ffffff;
+        z-index: 1;
+        transition: color 0.3s ease-in-out;
+    }
+
+
+    .edit-details::after,
+    .back-details::after,
+    .main::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #404eed, #2c2f33);
+        border-radius: 8px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+    .edit-details,
+    .back-details,
+    .main:hover {
+        box-shadow: -3px -3px 0 0 rgba(0, 0, 0, 0.3);
+        transform: scale(0.95);
+    }
+
+    .edit-details:hover:after,
+    .back-details:hover::after,
+    .main:hover::after {
+        opacity: 1;
+    }
+
+    .edit-details:hover::after,
+    .back-details:hover a,
+    .main:hover a {
+        color: #ffffff;
+    }
+    .edit-details:hover::after,
+    .back-details:hover::after,
+    .main:hover::after {
+        opacity: 1;
+    }
+
 body {
     margin: 0;
     padding: 0;
@@ -16,7 +98,7 @@ body {
 
 .film-card {
     transition: transform 0.2s ease-in-out;
-    width: 300px; /* Ограничиваем ширину карточки */
+    width: 300px; 
     border-radius: 10px;
     background-color: #313338;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -24,7 +106,7 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрируем содержимое */
+    align-items: center; 
 }
 
     .film-card:hover {
@@ -34,18 +116,18 @@ body {
 
 .poster-frame {
     width: 100%;
-    height: 400px; /* Фиксированная высота для всех постеров */
+    height: 400px; 
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #232428;
-    overflow: hidden; /* Обрезаем лишнее, если изображение выходит за рамки */
+    overflow: hidden; 
 }
 
     .poster-frame img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Обрезает изображение, сохраняя пропорции */
+        object-fit: cover; 
     }
 
 
@@ -64,4 +146,82 @@ body {
 
 strong {
     color: #7289da; 
+}
+
+.fixed-size-img {
+    width: 100%;
+    max-width: 400px; 
+    height: 550px; 
+    object-fit: cover; 
+}
+
+.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 60px; 
+}
+
+.back-details {
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #5865F2;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+
+}
+
+.buttons-details{
+    display: flex;  
+}
+
+.save-button,
+.cancel-button {
+    margin-top: 10px;
+    background-color: #5865F2;
+    color: white;
+    border: none;
+    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.3);
+    padding: 8px 16px; 
+    font-size: 14px; 
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;\
+    display: inline-block;
+}
+
+    .save-button:hover {
+        background-color: #404EED;
+        box-shadow: -2px -2px 0 0 rgba(0, 0, 0, 0.3);
+        transform: scale(0.95);
+    }
+
+.cancel-button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #5865F2;
+    margin-left: 10px;
+}
+
+    .cancel-button:hover {
+        background-color: #5865F2;
+        color: white;
+    }
+
+.container-delete {
+    max-width: 600px;
+    margin: 0 auto; 
 }

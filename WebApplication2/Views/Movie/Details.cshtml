@@ -1,0 +1,34 @@
+﻿@model WebApplication2.Models.Movie
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <img src="@(Model.Poster ?? "/images/default-poster.jpg")" class="fixed-size-img rounded shadow" alt="Poster of @Model.Name">
+        </div>
+
+        <div class="col-md-8">
+            <h1 class="mb-3">@Model.Name (@Model.Year)</h1>
+            <p><strong>Режиссёр:</strong> @Model.Director</p>
+            <p><strong>Жанр:</strong> @Model.Genre</p>
+            <p><strong>Год:</strong> @Model.Year</p>
+            <p><strong>Описание:</strong></p>
+            <p>@(string.IsNullOrEmpty(Model.Description) ? "Описание отсутствует." : Model.Description)</p>
+             <div class="buttons-details">
+                <div class="back-details">
+                    <a asp-action="Index">Back</a>
+                </div>
+                <div class="back-details">
+                    <a asp-controller="Movie" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                </div>
+                <div class="back-details">
+                    <a asp-controller="Movie" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
